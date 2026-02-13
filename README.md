@@ -12,24 +12,25 @@
 
 ## 快速开始
 
-### 安装
-
-克隆仓库到本地：
+### 一键配置
 
 ```bash
+# 克隆仓库
 git clone https://github.com/y1uy1/smart-illustrator-zhipu.git
 cd smart-illustrator-zhipu
-```
 
-### 配置
-
-设置智谱 AI API Key：
-
-```bash
+# 设置 API Key
 export ZHIPU_API_KEY="your_api_key_here"
+
+# 运行快速开始脚本
+./quickstart.sh
 ```
 
-获取 API Key：https://open.bigmodel.cn/
+📖 **详细安装指南：请查看 [INSTALL.md](INSTALL.md)**
+
+### 获取 API Key
+
+访问 https://open.bigmodel.cn/ 注册并创建 API Key。
 
 ### 基础使用
 
