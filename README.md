@@ -14,10 +14,11 @@
 
 ### 安装
 
-将 skill 文件夹复制到 Manus skills 目录：
+克隆仓库到本地：
 
 ```bash
-cp -r smart-illustrator ~/.manus/skills/
+git clone https://github.com/y1uy1/smart-illustrator-zhipu.git
+cd smart-illustrator-zhipu
 ```
 
 ### 配置
@@ -34,16 +35,16 @@ export ZHIPU_API_KEY="your_api_key_here"
 
 ```bash
 # 文章配图（小红书风格）
-/smart-illustrator article.md --style xiaohongshu
+bun scripts/generate-image.ts --prompt "一只可爱的小猫咪" --output cat.png
 
-# 文章配图（公众号风格）
-/smart-illustrator article.md --style wechat
+# 批量生成
+bun scripts/batch-generate.ts --config config.json --output-dir ./images
 
-# 生成封面图
-/smart-illustrator article.md --mode cover --platform xiaohongshu
+# Mermaid 导出
+bun scripts/mermaid-export.ts --input diagram.mmd --output diagram.png
 
-# PPT 信息图
-/smart-illustrator script.md --mode slides
+# Excalidraw 导出
+bun scripts/excalidraw-export.ts --input diagram.excalidraw --output diagram.png
 ```
 
 ## 平台支持
@@ -73,7 +74,7 @@ export ZHIPU_API_KEY="your_api_key_here"
 
 可选依赖（Excalidraw 导出）：
 ```bash
-cd ~/.manus/skills/smart-illustrator/scripts
+cd scripts
 npm install
 npx playwright install firefox
 ```
